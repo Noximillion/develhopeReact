@@ -6,3 +6,9 @@ export class Welcome extends React.Component {
     }
 }
 
+Welcome.defaultProps = {
+    name:'pino'
+}
+
+
+// now the prop name has a default value
