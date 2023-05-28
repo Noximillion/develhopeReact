@@ -4,9 +4,6 @@ import { Welcome } from "./welcome";
 
 export class App extends React.Component {
     render() {
-        return <Welcome />
+        return <Welcome name="pino" age={23}/>
     }
 }
-
-// if no name is passed then it will print only the component as it is without the prop
-
