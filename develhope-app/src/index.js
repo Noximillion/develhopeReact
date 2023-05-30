@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
-import { Counter } from './counter'
+import { App } from './app';
 
 
 const root = document.querySelector('#root')
 
-ReactDOM.render(<Counter />, root)
+ReactDOM.render(<App />, root)
