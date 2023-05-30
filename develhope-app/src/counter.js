@@ -7,16 +7,18 @@ export class Counter extends React.Component {
         counter: this.props.initialVal,
     }
 
-    constructor(props){
-        super(props)
 
+    componentDidMount() {
         setInterval(() => {
             this.setState((state) => {
                 return {counter: state.counter + this.props.increment}
             })
         },this.props.interval)
     }
+
     render() {
         return <CounterDisplay displayCount={this.state.counter}/>
     }
 }
+
+// No, la funzione constructor non è più necessaria
