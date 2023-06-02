@@ -1,10 +1,10 @@
 import React from "react";
-import { ClickTraker } from "./clickTraker";
+import { InteractiveWelcome } from "./interactiveWelcome";
 
 
 
 export class App extends React.Component {
     render() {
-        return <ClickTraker />
+        return <InteractiveWelcome/>
     }
 }
