@@ -1,10 +1,10 @@
 import React from "react";
-import { InteractiveWelcome } from "./interactiveWelcome";
+import { Login } from "./login";
 
 
 
 export class App extends React.Component {
     render() {
-        return <InteractiveWelcome/>
+        return <Login />
     }
 }
