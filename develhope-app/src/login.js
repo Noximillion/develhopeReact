@@ -25,6 +25,15 @@ export class Login extends React.Component {
         }
     }
 
+
+    resetInput = () => {
+        this.setState({
+            username: '',
+            password: ''
+        })
+    }
+
+
     render() {
         return(
             <div>
@@ -32,6 +41,7 @@ export class Login extends React.Component {
                     <input name='username' onChange={this.onLogin} />
                     <input name='password' type='password' onChange={this.onLogin} />
                     <button id='buttonLog' type="submit" onChange={this.onLogin} disabled>Login</button>
+                    <button onClick={this.resetInput}>Reset</button>
                 </form>
             </div>
         )
