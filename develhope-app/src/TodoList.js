@@ -12,6 +12,8 @@ export class List extends React.Component {
         this.setState({
             items:[...this.state.items, item.value]
         })
+
+        item.value='';
     }
 
     resetTodo = () => {
