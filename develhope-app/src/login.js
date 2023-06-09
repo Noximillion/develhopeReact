@@ -1,47 +1,30 @@
 import React from "react";
 
-export class Login extends React.Component {
-
-    state = {
-        username: '',
-        password: '',
-    }
-
+export class UncontrolledLogin extends React.Component {
+        
     onLogin = (event) => {
+
         event.preventDefault()
 
-        const name = event.target.name
-        const val = event.target.value
-        this.setState({
-            [name]: val
-        })
+        const username = document.getElementById('username')
+        const password = document.getElementById('password')
+        const button = document.getElementById('buttonLog')
 
-        const button = document.querySelector('#buttonLog')
 
-        if(this.state.username && this.state.password) {
-            button.disabled = false
+        if(username.value && password.value){
+            button.disabled = false;
         } else {
-            button.disabled = true
+            button.disabled = true;
         }
     }
-
-
-    resetInput = () => {
-        this.setState({
-            username: '',
-            password: ''
-        })
-    }
-
 
     render() {
         return(
             <div>
-                <form>
-                    <input name='username' onChange={this.onLogin} />
-                    <input name='password' type='password' onChange={this.onLogin} />
-                    <button id='buttonLog' type="submit" onChange={this.onLogin} disabled>Login</button>
-                    <button onClick={this.resetInput}>Reset</button>
+                <form onChange={this.onLogin}>
+                    <input id='username' name='username' />
+                    <input id='password' name='password' type='password' />
+                    <button id='buttonLog' type="submit"   disabled >Login</button>
                 </form>
             </div>
         )
