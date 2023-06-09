@@ -1,6 +1,3 @@
-// Create a TodoList component that renders a ul tag with a li tag for each item contained in the items state variable. The items state variable should be an array of strings. The TodoList component should also contain an input tag and a button. When the button is clicked, the event handler should add the value of the input tag to the items array.
-
-
 import React from "react";
 
 export class List extends React.Component {
@@ -17,10 +14,17 @@ export class List extends React.Component {
         })
     }
 
-
     resetTodo = () => {
         this.setState({
             items:[]
+        })
+    }
+
+    removeTodo = () => {
+        this.setState({
+            items: this.state.items.filter((el) => {
+               el !== 
+            })
         })
     }
 
@@ -29,11 +33,14 @@ export class List extends React.Component {
         return (
             <div>
                 <ul>
-                {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
+                {this.state.items.map((item, index) => 
+                <li key={index}>{item} 
+                <button type='button' onClick={this.removeTodo}>Remove</button>
+                </li>)}
                 </ul>
                 <input id='pippo' type='text'></input>
                 <button type='button' onClick={this.addTodo}>add to list</button>
-                <button type='button' onClick={this.resetTodo}>Reset list</button>
+                <button type='button' onClick={this.resetTodo}>Empty the list</button>
             </div>
         )
     }
