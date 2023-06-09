@@ -1,36 +1,30 @@
 import React from "react";
 
 export class UncontrolledLogin extends React.Component {
+        
+    onLogin = (event) => {
 
-    handleLogIn = (event) => {
         event.preventDefault()
 
-        const username = event.target.elements.username.value
-        const password = event.target.elements.password.value
+        const username = document.getElementById('username')
+        const password = document.getElementById('password')
         const button = document.getElementById('buttonLog')
-        
-        // function checkInputs() {
-            
-        //     if(username == true && password == true) {
-        //         button.disabled = false
-        //     } else {
-        //         button.disabled = true
-        //     }
-        // }
 
-        console.log(
-            username,
-            password,
-        )
+
+        if(username.value && password.value){
+            button.disabled = false;
+        } else {
+            button.disabled = true;
+        }
     }
 
     render() {
         return(
             <div>
-                <form onSubmit={this.handleLogIn}>
-                    <input name='username' autoFocus/>
-                    <input name='password' type='password' />
-                    <button id='buttonLog' type="submit">Login</button>
+                <form onChange={this.onLogin}>
+                    <input id='username' name='username' autoFocus/>
+                    <input id='password' name='password' type='password' />
+                    <button id='buttonLog' type="submit"   disabled >Login</button>
                 </form>
             </div>
         )
