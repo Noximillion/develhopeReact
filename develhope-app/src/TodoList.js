@@ -17,6 +17,13 @@ export class List extends React.Component {
         })
     }
 
+
+    resetTodo = () => {
+        this.setState({
+            items:[]
+        })
+    }
+
     render() {
 
         return (
@@ -26,6 +33,7 @@ export class List extends React.Component {
                 </ul>
                 <input id='pippo' type='text'></input>
                 <button type='button' onClick={this.addTodo}>add to list</button>
+                <button type='button' onClick={this.resetTodo}>Reset list</button>
             </div>
         )
     }
