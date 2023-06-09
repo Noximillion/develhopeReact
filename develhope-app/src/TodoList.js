@@ -20,11 +20,15 @@ export class List extends React.Component {
         })
     }
 
-    removeTodo = () => {
+    removeTodo = (val) => {
+        
+        // const itemToRemove = event.currentTarget
+        const filteredArray = this.state.items.filter((item => item !==val ))
+        // const filteredArray = this.state.items.filter((el) => { 
+        //     return el !== event.target.item
+        // })
         this.setState({
-            items: this.state.items.filter((el) => {
-               el !== 
-            })
+            items: filteredArray
         })
     }
 
@@ -33,10 +37,10 @@ export class List extends React.Component {
         return (
             <div>
                 <ul>
-                {this.state.items.map((item, index) => 
-                <li key={index}>{item} 
-                <button type='button' onClick={this.removeTodo}>Remove</button>
-                </li>)}
+                {this.state.items.map((item) => <li key={item}>
+                        {item} 
+                        <button type='button' onClick={() => this.removeTodo(item)}>Remove</button>
+                    </li>)}
                 </ul>
                 <input id='pippo' type='text'></input>
                 <button type='button' onClick={this.addTodo}>add to list</button>
