@@ -28,10 +28,10 @@ export class Login extends React.Component {
     render() {
         return(
             <div>
-                <form>
-                    <input name='username' onChange={this.onLogin} />
-                    <input name='password' type='password' onChange={this.onLogin} />
-                    <button id='buttonLog' type="submit" onChange={this.onLogin} disabled>Login</button>
+                <form onChange={this.onLogin}>
+                    <input name='username' />
+                    <input name='password' type='password' />
+                    <button id='buttonLog' type="submit" disabled>Login</button>
                 </form>
             </div>
         )
