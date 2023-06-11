@@ -36,7 +36,7 @@ export class List extends React.Component {
                 {this.state.items.map((item, index) => 
                     <li key={index}>
                         {item} 
-                        <button type='button' onClick={() => this.removeTodo(item, index)}>Remove</button>
+                        <button type='button' onClick={() => this.removeTodo(index)}>Remove</button>
                     </li>)}
                 </ul>
                 <input id='pippo' type='text'></input>
