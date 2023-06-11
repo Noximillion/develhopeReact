@@ -12,6 +12,8 @@ export class List extends React.Component {
         this.setState({
             items:[...this.state.items, item.value]
         })
+
+        item.value = '';
     }
 
     resetTodo = () => {
@@ -20,9 +22,9 @@ export class List extends React.Component {
         })
     }
 
-    removeTodo = () => {
+    removeTodo = (val) => {
         this.setState({
-            
+            items:[this.state.items.filter((item, index) => index !== val)]
         })
     }
 
@@ -34,7 +36,7 @@ export class List extends React.Component {
                 {this.state.items.map((item, index) => 
                     <li key={index}>
                         {item} 
-                        <button type='button' onClick={this.removeTodo}>Remove</button>
+                        <button type='button' onClick={() => this.removeTodo(item, index)}>Remove</button>
                     </li>)}
                 </ul>
                 <input id='pippo' type='text'></input>
