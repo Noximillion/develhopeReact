@@ -1,4 +1,5 @@
 import React from "react";
+import { AddMouseTracker } from "./MouseTrackerHOC"
 
 export class Counter extends React.Component {
 
@@ -13,11 +14,17 @@ export class Counter extends React.Component {
     }
     
     render() {
+
+        const [x, y] = this.props.position
+
         return(
             <div>
                 <h3>Counter: {this.state.counter}</h3>
                 <button onClick={this.incrementCounter}>Increment</button>
+                Current position: {x}, {y}
             </div>
         )
     }
 }
+
+export default AddMouseTracker(Counter)
