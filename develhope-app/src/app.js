@@ -1,6 +1,6 @@
 import React from "react";
 import { LanguageContext } from "./LanguageContext";
-import { Welcome } from "./welcome";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 export class App extends React.Component {
 
@@ -24,7 +24,7 @@ export class App extends React.Component {
                     <option value='ita'>ita</option>
                 </select>
             <LanguageContext.Provider value={this.state.language}>
-                <Welcome name={'andre'}/>
+                <DisplayLanguage />
             </LanguageContext.Provider>
             </div>
         )
