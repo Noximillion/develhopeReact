@@ -2,8 +2,8 @@ import React from "react";
 
 export class List extends React.Component {
     state = {
-        items: ['mangiare', 'dormire', 'bere']
-    }
+        items: ['mangiare', 'dormire', 'bere'],
+    };
 
     addTodo = () => {
 
@@ -16,29 +16,29 @@ export class List extends React.Component {
         item.value = '';
     }
 
-    resetTodo = () => {
+    resetTodos = () => {
         this.setState({
-            items:[]
-        })
-    }
+            items: [],
+        });
+    };
 
-    removeTodo = (val) => {
-        this.setState({
-            items:[this.state.items.filter((_, index) => index !== val)]
-        })
-    }
+    removeLiItem = (event) => {
+
+    const remove = event.target.id;
+
+    this.setState({
+        items: this.state.items.filter((el) => el !== remove),
+        });
+    };
 
     render() {
-
         return (
-            <div>
-                <ul>
-                    {this.props.render(this.state.items, this.removeTodo)}
-                </ul>
-                <input id='pippo' type='text'></input>
-                <button type='button' onClick={this.addTodo}>add to list</button>
-                <button type='button' onClick={this.resetTodo}>Empty the list</button>
-            </div>
-        )
+        <div>
+            <ul>{this.props.render(this.state.items, this.removeLiItem)}</ul>
+            <input type="text" id="pippo" />
+            <button type='button' onClick={this.addTodo}>add to list</button>
+            <button type='button' onClick={this.resetTodos}>Empty the list</button>
+        </div>
+        );
     }
 }

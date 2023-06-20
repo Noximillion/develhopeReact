@@ -3,16 +3,24 @@ import { List } from "./TodoList";
 
 export class App extends React.Component {
     render() {
-        return <List render={(items, removeTodo) => {
-            return(
-                <div>
-                {items.map((item, index) => 
-                    <li key={index}>
-                        {item} 
-                        <button onClick={() => removeTodo(index)}>Remove</button>
-                    </li>)}
-                </div>
-            )
-        }}/>
+        return (
+            <div>
+                <List render={(items, removeLi) => {
+                    return (
+                        <div>
+                            {items.map((item) => (
+                            <li id={item}>
+                                {item}
+                                <button id={item} onClick={removeLi}>
+                                remove
+                                </button>
+                            </li>
+                            ))}
+                        </div>
+                        )
+                    }}
+                ></List>
+            </div>
+        )
     }
 }
