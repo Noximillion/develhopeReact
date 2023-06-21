@@ -1,14 +1,16 @@
 import React from "react";
-import { Login } from "./HookLogin";
 
+import { ClickCounter } from "./HookClickCounter";
 
-export class App extends React.Component {
+export function App() {
 
-    render() {
-        return (
-            <div>
-                <Login />
-            </div>
-        )
+    const onChangeCounter = (val) => {
+        console.log('counter is', val)
     }
+
+    return (
+        <div>
+            <ClickCounter funcToCall={onChangeCounter}/>
+        </div>
+    )
 }
