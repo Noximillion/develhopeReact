@@ -1,11 +1,11 @@
 import React from "react";
-import { Counter } from "./counter";
+import { FetchGithubUser } from "./GithubUser";
 
 export function App() {
 
     return (
         <div>
-            <Counter />
+            <FetchGithubUser username={'Noximillion'}/>
         </div>
     )
 }
