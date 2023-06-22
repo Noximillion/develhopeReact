@@ -1,11 +1,11 @@
 import React from "react";
-import { FetchGithubUser } from "./GithubUser";
+import { FetchGithubUserList } from "./GithubUserList";
 
 export function App() {
 
     return (
         <div>
-            <FetchGithubUser username={'Noximillion'}/>
+            <FetchGithubUserList/>
         </div>
     )
 }
