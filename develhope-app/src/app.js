@@ -1,11 +1,11 @@
 import React from "react";
-import { FetchGithubUserList } from "./GithubUserList";
+import { HookCounter } from "./counter";
 
 export function App() {
 
     return (
         <div>
-            <FetchGithubUserList/>
+            <HookCounter />
         </div>
     )
 }
