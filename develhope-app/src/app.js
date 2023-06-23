@@ -1,11 +1,11 @@
 import React from "react";
-import { Login } from "./HookLogin";
+import { GetGithubUser } from "./GithubUser";
 
 export function App() {
 
     return (
         <div>
-            <Login />
+            <GetGithubUser username='elperez365'/>
         </div>
     )
 }
