@@ -1,18 +1,15 @@
-import { FilteredList } from "./UseMemo";
+// Add a new Route to the /counter path that renders the Counter component
+
+import { Route, Routes } from 'react-router-dom'
+import { HookCounter } from "./counter";
 
 export function App() {
 
-    const pippo = [
-        {name: 'pino', id: 1, age: 20},
-        {name: 'pippo', id: 2, age: 17},
-        {name: 'pinocchio', id: 3, age: 13},
-        // {name: 'franco', id: 4, age: 20},
-        {name: 'franchino', id: 5, age: 34}
-    ]
-
     return (
         <div>
-            <FilteredList PList={pippo} />
+            <Routes>
+                <Route path="/counter" element={<HookCounter />} />
+            </Routes>
         </div>
     )
 }
