@@ -1,11 +1,12 @@
 import React from "react";
+import { DisplayLanguage } from "./HookDisplayLanguage";
 
-export class Welcome extends React.Component {
-  render() {
-    return (
-          <div>
-            <p>welcome, {this.props.name}</p>
-          </div>
-    );
-  }
+export function Welcome({language}) {
+
+  return (
+    <div>
+      <DisplayLanguage />
+      <p>{`${language}`=== 'eng' ? 'hello' : 'buongiorno'}</p>
+    </div>
+  );
 }
