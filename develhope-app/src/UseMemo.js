@@ -7,7 +7,7 @@ export function FilteredList({ PList }) {
     const [people, setPeople] = useState(PList);
 
     useMemo(() => {
-        setPeople(people.filter(el => el.age > 17));
+        setPeople(people.filter(el => el.age > 18));
     }, [PList]);
 
     return (
