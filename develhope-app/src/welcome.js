@@ -11,6 +11,8 @@ export function Welcome() {
       <Link to="/counter">Count with me</Link>
       <br />
       <Link to="/HookLogin">Write your name and password</Link>
+      <br />
+      <Link to="/NotFound">Sceicchi Ricchi</Link>
     </div>
   );
 }
