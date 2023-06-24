@@ -1,8 +1,9 @@
-import { useControlledForm } from "./useControlledForm"
+import { UseControlledForm } from "./useControlledForm"
+
 
 export function Login() {
 
-    const{ handleAll, event } = useControlledForm({})
+    const{ handleAll, event } = UseControlledForm({})
 
     // const [info, setInfo] = useState({
     //     username: '',

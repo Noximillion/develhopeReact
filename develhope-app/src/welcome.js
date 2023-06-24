@@ -1,12 +1,16 @@
 import React from "react";
-import { DisplayLanguage } from "./HookDisplayLanguage";
+import { Link } from "react-router-dom";
 
-export function Welcome({language}) {
+export function Welcome() {
 
   return (
     <div>
-      <DisplayLanguage />
-      <p>{`${language}`=== 'eng' ? 'hello' : 'buongiorno'}</p>
+      <p>Welcome</p>
+      <Link to="/CardDetails">Choose your car</Link>
+      <br />
+      <Link to="/counter">Count with me</Link>
+      <br />
+      <Link to="/HookLogin">Write your name and password</Link>
     </div>
   );
 }
