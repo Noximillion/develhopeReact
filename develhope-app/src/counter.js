@@ -1,8 +1,8 @@
 import { useCounter } from "./useCounter"
 
-export function HookCounter() {
+export function HookCounter({initialValue, m, n}) {
 
-    const {counter, increment, subtract, reset }=useCounter(0, 1, 1)
+    const {counter, increment, subtract, reset }=useCounter(initialValue, m, n)
 
     return (
         <div>

@@ -6,11 +6,11 @@ export function useCounter(initialValue, m, n) {
     const [count, setCount] = useState(initialValue)
 
     function addOne() {
-        setCount(count => count + m)
+        setCount(count => count + Number(m))
     }
 
     function subOne() {
-        setCount(count => count - n)
+        setCount(count => count - Number(n))
     }
 
     function resetCount() {
