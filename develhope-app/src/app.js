@@ -1,14 +1,14 @@
-// Add a new Route to the /counter path that renders the Counter component
+// Add a new Route to the users/:username path that renders a ShowGithubUser component that receives the username as a path parameter and renders the GithubUser component by passing it the received username.
 
 import { Route, Routes } from 'react-router-dom'
-import { HookCounter } from "./counter";
+import { GetGithubUser } from './GithubUser';
 
 export function App() {
 
     return (
         <div>
             <Routes>
-                <Route path="/counter" element={<HookCounter />} />
+                <Route path="/users/:username" element={<GetGithubUser />} />
             </Routes>
         </div>
     )
