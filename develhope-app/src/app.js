@@ -1,33 +1,18 @@
-import { useEffect, useState } from "react";
-import { HookCounter } from "./counter";
+import { FilteredList } from "./UseMemo";
 
 export function App() {
 
-    const [numbers, setNumbers] = useState({
-        plus: 1,
-        minus: 1,
-        reset: 0,
-    })
-
-    function handleChange(event) {
-        const {name, value} = event.target
-
-        setNumbers((numbers) => {
-            return {
-                ...numbers,
-            [name]:value
-            }
-        })
-    }
-
-    console.log(numbers)
+    const pippo = [
+        {name: 'pino', id: 1, age: 20},
+        {name: 'pippo', id: 2, age: 17},
+        {name: 'pinocchio', id: 3, age: 13},
+        // {name: 'franco', id: 4, age: 20},
+        {name: 'franchino', id: 5, age: 34}
+    ]
 
     return (
         <div>
-            <HookCounter initialValue={numbers.reset} m={numbers.plus} n={numbers.minus}/>
-            <input type='number' name='plus' style={{width:'32px'}} value={numbers.plus} onChange={handleChange}/>
-            <input type='number' name='minus' style={{width:'32px'}} value={numbers.minus} onChange={handleChange}/>
-            <input type='number' name='reset' style={{width:'32px'}} value={numbers.reset} onChange={handleChange}/>
+            <FilteredList PList={pippo} />
         </div>
     )
 }
