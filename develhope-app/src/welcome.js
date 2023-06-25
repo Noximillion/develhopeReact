@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FetchGithubUserList } from "./GithubUserList";
 
 export function Welcome() {
 
@@ -13,6 +14,8 @@ export function Welcome() {
       <Link to="/HookLogin">Write your name and password</Link>
       <br />
       <Link to="/NotFound">Sceicchi Ricchi</Link>
+      <br />
+      <Link to="/GithubUserList">Search</Link>
     </div>
   );
 }
