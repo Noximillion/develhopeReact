@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { GetGithubUser } from "./GithubUser";
 
+
 export function FetchGithubUserList() {
 
     const [user, setUser] = useState('')
